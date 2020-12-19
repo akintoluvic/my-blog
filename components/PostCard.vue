@@ -5,7 +5,7 @@
      class="p-4 md:w-1/3"
   >
     <!-- <div> -->
-        <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+        <div class="h-full shadow-lg hover:shadow rounded-lg overflow-hidden">
           <img 
             class="lg:h-48 md:h-36 w-full object-cover object-center" 
             v-if="article.cover_image"
@@ -26,7 +26,7 @@
                     v-for="tag in article.tag_list"
                     :key="tag"
                     :to="{ name: 't-tag', params: { tag } }"
-                    class="mr-1 mb-1 py-1 px-3 bg-gray-300 text-gray-700 rounded-lg"
+                    class="mr-2 mb-2 py-1 px-3 bg-gray-200 text-gray-700 rounded-lg"
                 >
           #{{ tag }}
         </nuxt-link>
@@ -34,7 +34,7 @@
             
             
             <div class="flex items-center flex-wrap ">
-              <span class="text-gray-600 inline-flex items-center leading-none text-sm mr-2">
+              <span class="text-gray-600 inline-flex items-center leading-none text-sm mr-3 pr-3 border-r-2 border-gray-300">
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
@@ -48,7 +48,7 @@
                 {{ article.comments_count }}
               </span>
 
-              <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
+              <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1">
                 {{ article.readable_publish_date }}
               </span>
             </div>
