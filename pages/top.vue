@@ -40,7 +40,7 @@
     },
     async fetch() {
       const articles = await fetch(
-        `https://dev.to/api/articles?tag=nuxt&state=rising&page=${this.currentPage}`
+        `https://dev.to/api/articles?tag=nuxt&top=365&page=${this.currentPage}`
       ).then(res => res.json())
       // console.log(articles)
       this.articles = this.articles.concat(articles)
