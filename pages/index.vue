@@ -31,6 +31,7 @@
 
 <script>
   export default {
+    layout: 'posts',
     data() {
       return {
         currentPage: 1,
