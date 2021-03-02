@@ -1,7 +1,29 @@
 <template>
-  <div class="site-bg">
-    <Nuxt keep-alive />
-  </div>
+  <div class="bg-gray-100">
+  <Navbar />
+  <header class="w-full h-auto">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 ">
+      <p class="text-base font-bold leading-tight text-gray-900">
+        Categories
+      </p>
+    </div>
+  </header>
+  
+  <main class="text-gray-700 body-font">
+    <div class="max-w-7xl mx-auto flex space-x-6 px-8 pt-4 pb-24 mx-auto">
+      <div class="w-1/4 h-64 bg-gray-300 rounded-xl -mt-4">jjjj</div>
+      <div class=" w-2/4 flex flex-wrap -m-4">
+        <Nuxt keep-alive />
+      </div>
+      <div class="w-1/4 h-screen">
+        <div class="bg-gray-300 rounded-lg h-48 w-full rounded-xl -mt-4">
+          hjjj
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
 </template>
 
 <style>

@@ -2,31 +2,31 @@
     <nuxt-link
     :to="{ name: 'username-article', params: { username: article.user.username, article: article.id } }"
     tag="article"
-     class="p-4 md:w-1/3"
+     class="w-full mb-6"
   >
     <!-- <div> -->
-        <div class="h-full shadow-lg hover:shadow rounded-lg overflow-hidden">
+        <div class="h-full  mb-4 shadow-lg hover:shadow rounded-xl overflow-hidden">
           <img 
-            class="lg:h-48 md:h-36 w-full object-cover object-center" 
+            class="lg:h-64 md:h-36 w-full object-cover object-center" 
             v-if="article.cover_image"
             :src="article.cover_image"
             :alt="article.title"
           >
           <img
-           class="lg:h-48 md:h-36 w-full object-cover object-center" 
+           class="lg:h-64 md:h-36 w-full object-cover object-center" 
            v-else :src="article.social_image" :alt="article.title" />
 
           <div class="p-6">
             <!-- <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2> -->
             <nuxt-link :to="{name: 'username-article', params: { username: article.user.username, article: article.id } }" >
-                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ article.title }}</h1>
+                <h1 class="title-font text-2xl font-bold text-gray-900 hover:text-blue-600 mb-3">{{ article.title }}</h1>
             </nuxt-link>
             <div class="flex flex-wrap mb-3">
                 <nuxt-link
                     v-for="tag in article.tag_list"
                     :key="tag"
                     :to="{ name: 't-tag', params: { tag } }"
-                    class="mr-2 mb-2 py-1 px-3 bg-gray-200 text-gray-700 rounded-lg"
+                    class="mr-2 mb-2 pb-1 px-3 bg-gray-200 text-gray-700 rounded-2xl"
                 >
           #{{ tag }}
         </nuxt-link>
