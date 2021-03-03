@@ -41,7 +41,11 @@
         </div>
       </header>
       <!-- eslint-disable-next-line -->
-      <div class="content" v-html="article.body_html" />
+      <!-- <div class="content" v-html="article.body_html" v-pre >
+
+      </div> -->
+      <code class="mx-4">{{article.body_html}}</code>
+      <div class="content px-5" v-html="article.body_html" />
     </template>
   </article>
 </template>
