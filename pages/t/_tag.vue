@@ -41,6 +41,10 @@
 </template>
 
 <script>
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   export default {
     layout: 'posts',
     data() {
@@ -51,8 +55,15 @@
     },
     async fetch() {
       const articles = await fetch(
-        `https://dev.to/api/articles?tag=nuxt&state=rising&page=${this.currentPage}`
+        `https://dev.to/api/articles?tag=${this.$route.params.tag}&top=365&page=${this.currentPage}`
       ).then(res => res.json())
+      if (!articles.length && this.currentPage === 1) {
+        // set status code on server
+        if (process.server) {
+            this.$nuxt.context.res.statusCode = 404
+        }
+        throw new Error(`Tag ${this.$route.params.tag} not found`)
+      }
       this.articles = this.articles.concat(articles)
     },
     methods: {
@@ -63,7 +74,14 @@
             this.$fetch()
           }
         }
-      }
+      },
+      head() {
+        return {
+        title:
+            this.$route.params.tag &&
+            `${capitalize(this.$route.params.tag)} articles`
+        }
+    }
     }
     
   }
