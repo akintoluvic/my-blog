@@ -50,7 +50,7 @@
     data() {
       return {
         currentPage: 1,
-        articles: []
+        articles: [],
       }
     },
     async fetch() {

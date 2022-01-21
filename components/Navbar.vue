@@ -18,9 +18,14 @@
 
                 <a href="/top" class="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Top</a>
 
-                <a href="#" class="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Career</a>
-
-                <a href="#" class="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Discuss</a>
+                <nuxt-link
+                  v-for="tag in tags"
+                  :key="tag"
+                  class="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  :to="{ name: 't-tag', params: {tag} }"
+                >
+                  {{tag}}
+                </nuxt-link>
 
                 </div>
             </div>
@@ -29,3 +34,15 @@
   </nav>
 
 </template>
+<script>
+export default {
+  data() {
+    return {
+      tags: [
+        '#career',
+        '#discuss',
+      ]
+    }
+  },
+}
+</script>
