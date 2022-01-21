@@ -1,7 +1,7 @@
 <template>
   <div class="mt-5">
     <div class="flex space-x-8">
-      <article-block class="w-2/3 bg-white rounded-lg overflow-hidden" />
+      <article-block class="w-2/3 rounded-lg overflow-hidden" />
       <div class="w-1/3">
         <aside-username-block class="w-full bg-white rounded-lg overflow-hidden" />
       </div>
