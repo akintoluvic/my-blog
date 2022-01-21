@@ -30,14 +30,15 @@
             params: { username: user.username }
           }"
         >
-          <img :src="user.profile_image" :alt="user.name" />
+          <img :src="user.profile_image" class="w-full rounded-lg" :alt="user.name" />
         </nuxt-link>
-        <div class="text">
+        <div class="my-4">
           <nuxt-link
             :to="{
               name: 'username',
               params: { username: user.username }
             }"
+            class="block text-gray-800 font-semibold text-2xl"
           >
             <span>{{ user.name }}</span>
           </nuxt-link>
@@ -56,22 +57,22 @@
           name: 'username',
           params: { username: user.username }
         }"
-        class="f-button"
+        class="bg-gray-300 rounded-lg py-4 text-center w-full block"
       >
         See profile
       </nuxt-link>
-      <div class="info">
+      <div class="flex flex-col space-y-4 mt-4">
         <div v-if="user.summary">
-          <div class="title">about</div>
-          <div class="content">{{ user.summary }}</div>
+          <span class="text-gray-700">About: </span>
+          <span class="content">{{ user.summary }}</span>
         </div>
         <div v-if="user.location">
-          <div class="title">location</div>
-          <div class="content">{{ user.location }}</div>
+          <span class="text-gray-700">Location: </span>
+          <span class="content">{{ user.location }}</span>
         </div>
         <div v-if="user.joined_at">
-          <div class="title">joined</div>
-          <div class="content">{{ user.joined_at }}</div>
+          <span class="text-gray-700">Joined: </span>
+          <span class="content">{{ user.joined_at }}</span>
         </div>
       </div>
     </template>

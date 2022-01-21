@@ -3,7 +3,7 @@
     <div class="flex space-x-8">
       <article-block class="w-2/3 rounded-lg overflow-hidden" />
       <div class="w-1/3">
-        <aside-username-block class="w-full bg-white rounded-lg overflow-hidden" />
+        <aside-username-block class="w-full p-5 bg-white rounded-xl overflow-hidden" />
       </div>
     </div>
     <comments-block class="comments-block" />
