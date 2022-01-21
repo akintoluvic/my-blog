@@ -1,7 +1,7 @@
 <template>
     <div class="w-full bg-gray-100">
       <Navbar />
-      <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <Nuxt keep-alive />
       </div>
       
