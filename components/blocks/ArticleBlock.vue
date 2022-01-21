@@ -23,18 +23,24 @@
             #{{ tag }}
           </nuxt-link>
         </div>
-        <div v-if="article.cover_image" class="image-wrapper">
+        <div v-if="article.cover_image" class="mb-5">
           <img :src="article.cover_image" class="rounded-lg" :alt="article.title" />
         </div>
-        <div class="meta">
-          <div class="scl">
-            <span>
+        <div class="mb-10 flex justify-between">
+          <div class="flex space-x-4">
+            <span class="flex space-x-1">
               <!-- <heart-icon /> -->
-              {{ article.positive_reactions_count }}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-700" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+              </svg>
+              <span>{{ article.positive_reactions_count || 0 }}</span>
             </span>
-            <span class="comments" @click="scrollToComments">
+            <span class="flex space-x-1" @click="scrollToComments">
               <!-- <comments-icon /> -->
-              {{ article.comments_count }}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+              <span>{{ article.comments_count || 0 }}</span>
             </span>
           </div>
           <time>{{ article.readable_publish_date }}</time>
@@ -45,7 +51,7 @@
 
       </div> -->
       <!-- <pre class="mx-4">{{article.body_html}}</pre> -->
-      <div class="content px-5" v-html="article.body_html" />
+      <div class="article-body text-xl" v-html="article.body_html" />
     </template>
   </article>
 </template>
@@ -102,3 +108,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  /* Not working */
+  .article-body li {
+    @apply mb-5;
+  }
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <UsernameBlock />
+    <username-block />
     <main class="max-w-2xl mx-auto text-gray-700 body-font">
         <div v-if="$fetchState.pending" class="flex flex-wrap -m-4">
             <content-placeholders 
@@ -31,8 +31,10 @@
 </template>
 
 <script>
+import UsernameBlock from '../../components/blocks/UsernameBlock.vue'
 
 export default {
+  components: { UsernameBlock },
   async fetch() {
     const res = await fetch(
       // eslint-disable-next-line
